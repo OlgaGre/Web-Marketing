@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("./Roboto-Black.ttf"), url("./Roboto-Bold.ttf"), url("./Roboto-Light.ttf"), url("./Roboto-Medium.ttf"), url("./Roboto-Regular.ttf");
+  font-style: normal;
+}
+h1 {
+  color: red;
+  font-family: "Roboto";
+}
+
+body {
+  background: url("./1.jpg");
+}/*# sourceMappingURL=style.css.map */
