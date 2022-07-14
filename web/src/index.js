@@ -1,26 +1,199 @@
-import _ from 'lodash';
-import './style.css';
-import Icon from './1.jpg'
-import json from './dataset.json';
+//import _ from 'lodash';
+//import './style.css';
+//import Icon from './1.jpg'
+//import json from './dataset.json';
+const json = {
+  "page_meta": {
+    "h1": "DAF - TRUCKS FOR SALE FROM NETHERLANDS",
+    "title": "Used DAF trucks from Netherlands for sale at SuperTrucks NL",
+    "meta_keywords": "trucks, offers, prices, used, new, marketplace",
+    "meta_description": "Keyword: daf netherlands. 26 trucks. Find new or used trucks in any price range fast and easy!"
+  },
+  "nav": [
+    {
+      "href": "#",
+      "text": "Home"
+    },
+    {
+      "href": "#",
+      "text": "Trucks"
+    },
+    {
+      "href": "#",
+      "text": "About Us"
+    },
+    {
+      "href": "#",
+      "text": "Contact"
+    }
+  ],
+  "breadcrumbs": [
+    {
+      "href": "#",
+      "text": "Home"
+    },
+    {
+      "href": "#",
+      "text": "Trucks"
+    },
+    {
+      "href": "#",
+      "text": "DAF"
+    }
+  ],
+  "stock": [
+    {
+      "href": "#",
+      "title": "DAF XF 440 6X2 SSC Intarder Standklima Liftachse ACC Euro 6",
+      "price": 25900,
+      "price_currency": "EUR",
+      "make": "DAF",
+      "model": "XF 440 SSC",
+      "type": "Container transporter/ swap body truck",
+      "year": 2014,
+      "mileage": 486647,
+      "mileage_measure": "km",
+      "axle_configuration": "6x2",
+      "power": 440,
+      "power_measure": "hp",
+      "payload": "16 550 kg",
+      "gross_weight": "25 700 kg",
+      "image": "1.jpg"
+    },
+    {
+      "href": "#",
+      "title": "DAF XF 460 SSC 6X2 SSC ACC Liftachse Intarder Euro 6",
+      "price": 29900,
+      "price_currency": "EUR",
+      "make": "DAF",
+      "model": "XF 440 SSC",
+      "type": "Container transporter/ swap body truck",
+      "year": 2016,
+      "mileage": 554317,
+      "mileage_measure": "km",
+      "axle_configuration": "6x2",
+      "power": 460,
+      "power_measure": "hp",
+      "payload": "15 761 kg",
+      "gross_weight": "26 000 kg",
+      "image": "2.jpg"
+    },
+    {
+      "href": "#",
+      "title": "DAF CF 75.310 + Manual",
+      "price": 7950,
+      "price_currency": "EUR",
+      "make": "DAF",
+      "model": "CF 75.310",
+      "type": "Cab chassis truck",
+      "year": 2006,
+      "mileage": 1026087,
+      "mileage_measure": "km",
+      "axle_configuration": "4x4",
+      "power": 310,
+      "power_measure": "hp",
+      "payload": "10 710 kg",
+      "gross_weight": "18 600 kg",
+      "image": "3.jpg"
+    },
+    {
+      "href": "#",
+      "title": "DAF CF 65.300 + Euro 5 + lift",
+      "price": 25950,
+      "price_currency": "EUR",
+      "make": "DAF",
+      "model": "CF 65.300",
+      "type": "Curtainsider truck",
+      "year": 2014,
+      "mileage": 537307,
+      "mileage_measure": "km",
+      "axle_configuration": "4x2",
+      "power": 300,
+      "power_measure": "hp",
+      "payload": "9 634 kg",
+      "gross_weight": "19 000 kg",
+      "image": "4.jpg"
+    },
+    {
+      "href": "#",
+      "title": "DAF XF 105.410 + Combi floor + Euro 5",
+      "price": 19500,
+      "price_currency": "EUR",
+      "make": "DAF",
+      "model": "XF 105.410",
+      "type": "Box truck",
+      "year": 2009,
+      "mileage": 1142998,
+      "mileage_measure": "km",
+      "axle_configuration": "4x2",
+      "power": 408,
+      "power_measure": "hp",
+      "payload": "7 445 kg",
+      "gross_weight": "19 000 kg",
+      "image": "5.jpg"
+    },
+    {
+      "href": "#",
+      "title": "DAF 105 XF 460 6x2, EURO 5, Airco, Combi",
+      "price": 18750,
+      "price_currency": "EUR",
+      "make": "DAF",
+      "model": "XF 105.460",
+      "type": "Curtainsider truck",
+      "year": 2012,
+      "mileage": 897000,
+      "mileage_measure": "km",
+      "axle_configuration": "6x2",
+      "power": 460,
+      "power_measure": "hp",
+      "payload": "14 960 kg",
+      "gross_weight": "26 000 kg",
+      "image": "6.jpg"
+    }
+  ],
+  "page_text": [
+    {
+      "tag": "p",
+      "content": "A truck (a heavy load vehicle) – is a means of transport intended for load transportation. The concept of a “truck” has a rather broad definition and includes tractor units, as well as commercial vehicles and even pick-ups. A truck consists of a traction part and a load platform. Now let’s take into consideration trucks with the integral load platform and the GVW that reaches up to 7, 5 tons."
+    },
+    {
+      "tag": "p",
+      "content": "Trucks’ axle configuration may vary from 4x2 to 8x8 according to the engine capacity and the purpose of a truck. Thus, quarry and construction dump trucks are equipped with 4x4, 6x4, 6x6 and 8x6 wheel-bases more often."
+    },
+    {
+      "tag": "p",
+      "content": "Trucks are equipped with all modern passive and active safety systems in order to use the truck in urban areas or on the highways. These systems include collision prevention system, hill hold control, self-adjusting headlights, etc. Moreover, a contemporary truck meets all the requirements concerning driver’s comfort and the ergonomics of the cabin."
+    }
+  ]
+}
+const navMenu = document.getElementsByClassName('nav-menu-link');
 
-console.log(json.page_meta); // output `JSON5 Example`
-//console.log(json.owner.name); // output `Tom Preston-Werner`
+//console.log(navMenu);
 
 
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-
- // Add the image to our existing div.
- const myIcon = new Image();
- myIcon.src = Icon;
-
- element.appendChild(myIcon);
-
-  return element;
+function fullThePage(){
+  fullNav();
+  fullBreadcrumbs()
 }
 
-document.body.appendChild(component());
+
+
+
+function fullNav(){
+  for (let i = 0; i < navMenu.length; i++) {
+    navMenu[i].innerHTML = json.nav[i].text;
+    navMenu[i].href = json.nav[i].href;
+  }
+}
+function fullBreadcrumbs() {
+  let breadcrumbsLi = ''
+  for (let i = 0; i < json.breadcrumbs.length; i++) {
+  breadcrumbsLi += ` <li><a href="${json.breadcrumbs[i].href}" class="link">${json.breadcrumbs[i].text}</a></li>`
+    
+  }
+  breadcrumbsUl.insertAdjacentHTML('afterbegin',breadcrumbsLi );
+}
+
+
+fullThePage()
+console.log(navMenu);
