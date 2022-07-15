@@ -34,11 +34,13 @@ body {
 #main {
   grid-area: m;
 }
-*{
+
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 @media screen and (min-width: 1200px) {
   #container {
     display: grid;
@@ -58,6 +60,8 @@ body {
 
     #container-between {
       display: grid;
+      grid-gap: 20px;
+    
       grid-template-columns: 270px 1fr;
       grid-template-rows: 50px 40px 1758px;
       grid-template-areas:
@@ -129,65 +133,75 @@ body {
     color: black;
   }
 }
-.paginationSort{
+
+.paginationSort {
   display: flex;
   justify-content: space-between;
-  .pagination{
+
+  .pagination {
     display: flex;
-    div{
+
+    div {
       width: 35px;
       height: 35px;
       background-color: white;
-      text-align: center ;
+      text-align: center;
       margin-right: 16px;
-      vertical-align: middle ;
+      vertical-align: middle;
     }
-  
+
   }
 }
-.stock{
-  .stock-items{
+
+.stock {
+  margin-bottom: 16px;
+  .stock-items {
     margin-top: 16px;
     display: grid;
     grid-gap: 16px;
   }
 
-  .stock-item{
-    .stock-content{
+  .stock-item {
+    .stock-content {
       margin: 16px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
+
     width: 850px;
     height: 200px;
     background-color: white;
     display: flex;
     padding: 16px;
-    .firstLine{
+
+    .firstLine {
       width: 576px;
       display: flex;
       justify-content: space-between;
-      .title{
+
+      .title {
         font-family: 'Roboto';
-font-style: normal;
-font-weight: 500;
-font-size: 18px;
-line-height: 21px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
       }
-      .price{
+
+      .price {
         font-family: 'Roboto';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 19px;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
       }
     }
-    .thirdLine{
+
+    .thirdLine {
       display: flex;
       justify-content: left;
 
-      div{
+      div {
         height: 24px;
         background-color: $Borders;
         margin-right: 16px;
@@ -195,9 +209,46 @@ line-height: 19px;
         color: white;
       }
     }
-    img{
+
+    img {
       width: 224px;
-     height: 168px;
+      height: 168px;
     }
+  }
+}
+
+.page_text {
+  width: 565px;
+
+  p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+#filter {
+  width: 270px;
+  height: 596px;
+  background-color: white;
+  padding-left: 16px;
+
+  .title {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+  }
+
+  form {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
   }
 }

@@ -29,7 +29,20 @@
             <li><a href="" class="link"></a></li> -->
           </ul>
         </div>
-        <aside id="filter"></aside>
+        <aside id="filter">
+          <div class="title">Filter</div>
+          <form>
+            <p>power</p>
+            <input type="radio" id="300" name="power" value="300">
+            <label for="300">300 and more</label><br>
+            <input type="radio" id="400" name="power" value="400">
+            <label for="400">400 and more</label><br>
+            <input type="radio" id="500" name="power" value="500">
+            <label for="500">500 and more</label><br>
+           
+          </form>
+          <button id="search">search</button>
+        </aside>
         <main id="main">
           <h2>Stock</h2>
           <div class="paginationSort">
@@ -39,7 +52,7 @@
             </div>
             <div class="sort">
               <span>sort</span>
-              <select name="user_profile_color_1">
+              <select name="user_sort">
                 <option value="">Sort options</option>
                 <option value="1">popularity</option>
                 <option value="2">price</option>
@@ -64,24 +77,24 @@
                 </div> -->
               </div>
             </div>
-            <div class="page_text">
-              srdfgjhfdfgshdf
-              <p>sdfrhfd</p>
-              gdhg sh dhdh
-            </div>
+           
             <div class="paginationSort">
               <div class="pagination">
                 <div class="pagination_left">&#60;</div>
                 <div class="pagination_right">&#62;</div>
               </div>
+              <div class="sort">
+                <span>sort</span>
+                <select name="user_sort">
+                  <option value="">Sort options</option>
+                  <option value="1">popularity</option>
+                  <option value="2">price</option>
+                </select>
+              </div>
             </div>
-            <div class="sort">
-              <span>sort</span>
-              <select name="user_profile_color_1">
-                <option value="">Sort options</option>
-                <option value="1">popularity</option>
-                <option value="2">price</option>
-              </select>
+          
+            <div class="page_text" id="page_text">
+            
             </div>
           </div>
         </main>

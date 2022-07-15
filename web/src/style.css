@@ -41,6 +41,7 @@ body {
   }
   #container #container-between {
     display: grid;
+    grid-gap: 20px;
     grid-template-columns: 270px 1fr;
     grid-template-rows: 50px 40px 1758px;
     grid-template-areas: "n n" "b b" "f m";
@@ -117,6 +118,9 @@ body {
   vertical-align: middle;
 }
 
+.stock {
+  margin-bottom: 16px;
+}
 .stock .stock-items {
   margin-top: 16px;
   display: grid;
@@ -168,4 +172,37 @@ body {
 .stock .stock-item img {
   width: 224px;
   height: 168px;
+}
+
+.page_text {
+  width: 565px;
+}
+.page_text p {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+#filter {
+  width: 270px;
+  height: 596px;
+  background-color: white;
+  padding-left: 16px;
+}
+#filter .title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+#filter form {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
 }/*# sourceMappingURL=style.css.map */

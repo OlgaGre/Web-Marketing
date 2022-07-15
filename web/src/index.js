@@ -171,14 +171,15 @@ const json = {
   ],
 };
 const navMenu = document.getElementsByClassName("nav-menu-link");
-
+const btnSearch = document.getElementById('search')
 //console.log(navMenu);
 
 function fullThePage() {
   fullNav();
   fullBreadcrumbs();
   fullPagination();
-  fullStockItems()
+  fullStockItems();
+  fullTextPage();
 }
 
 function fullNav() {
@@ -197,40 +198,101 @@ function fullBreadcrumbs() {
 function fullPagination() {
   let numPagination = Math.ceil(json.stock.length / 6);
   let els = document.getElementsByClassName("pagination_left");
-  let divsForPagination = '';
+  let divsForPagination = "";
   for (let i = 1; i <= numPagination; i++) {
-    divsForPagination += `<div> ${i} </div>`
-    }
+    divsForPagination += `<div> ${i} </div>`;
+  }
   Array.prototype.forEach.call(els, function (el) {
-   
-   
     el.insertAdjacentHTML("afterend", divsForPagination);
   });
- 
 }
 function fullStockItems() {
-  let stockItems = '';
+  let stockItems = "";
   for (let i = 0; i < 6; i++) {
-   stockItems += ` <div class="stock-item">
+    stockItems += ` <div class="stock-item">
    <img src="./${json.stock[i].image}" alt="">
    <div class="stock-content">
    <div class="firstLine">
      <div class="title">${json.stock[i].title}</div>
-     <div class="price">${json.stock[i].price}</div>
+     <div class="price">${json.stock[i].price}  ${json.stock[i].price_currency}</div>
      </div>
-
+     <div class="detailed">
+     <p>type: ${json.stock[i].type}</p>
+     <p>power: ${json.stock[i].power}  ${json.stock[i].power_measure}</p>
+     <p>payload: ${json.stock[i].payload}</p>
+     <p>gross weight: ${json.stock[i].gross_weight}</p>
+     </div>
      <div class="thirdLine">
      <div class="year">${json.stock[i].year}</div>
      <div class="mileage">${json.stock[i].mileage}${json.stock[i].mileage_measure}</div>
      <div class="axle_configuration">${json.stock[i].axle_configuration}</div>
    </div>
    </div>
-   </div>`
-  
+   </div>`;
   }
-  
-  document.getElementById("stockItems").insertAdjacentHTML("afterbegin", stockItems)
+
+  document
+    .getElementById("stockItems")
+    .insertAdjacentHTML("afterbegin", stockItems);
+}
+function fullTextPage() {
+  let page_text = "";
+  for (let i = 0; i < json.page_text.length; i++) {
+    page_text += `<p>${json.page_text[i].content}</p>`;
+  }
+  document
+    .getElementById("page_text")
+    .insertAdjacentHTML("afterbegin", page_text);
 }
 
+function cleanStock() {
+  document.getElementById('stockItems').innerHTML = ''
+}
+
+function filter() {
+  var checkRadio = document.querySelector(
+    'input[name="power"]:checked');
+    if(checkRadio == null) {
+    return
+  }
+  cleanStock();
+  let arrNeedStock = [];
+for (let i = 0; i < json.stock.length; i++) {
+if (json.stock[i].power > checkRadio.value ) {
+  arrNeedStock.push(json.stock[i])
+}
+  
+}
+console.log(arrNeedStock)
+let needStockItems = "";
+  for (let i = 0; i < arrNeedStock.length; i++) {
+    needStockItems += ` <div class="stock-item">
+   <img src="./${arrNeedStock[i].image}" alt="">
+   <div class="stock-content">
+   <div class="firstLine">
+     <div class="title">${arrNeedStock[i].title}</div>
+     <div class="price">${arrNeedStock[i].price}  ${arrNeedStock[i].price_currency}</div>
+     </div>
+     <div class="detailed">
+     <p>type: ${arrNeedStock[i].type}</p>
+     <p>power: ${arrNeedStock[i].power}  ${arrNeedStock[i].power_measure}</p>
+     <p>payload: ${arrNeedStock[i].payload}</p>
+     <p>gross weight: ${arrNeedStock[i].gross_weight}</p>
+     </div>
+     <div class="thirdLine">
+     <div class="year">${arrNeedStock[i].year}</div>
+     <div class="mileage">${arrNeedStock[i].mileage}${arrNeedStock[i].mileage_measure}</div>
+     <div class="axle_configuration">${arrNeedStock[i].axle_configuration}</div>
+   </div>
+   </div>
+   </div>`;
+  }
+
+  document.getElementById("stockItems").insertAdjacentHTML("afterbegin", needStockItems);
+console.log(arrNeedStock)
+}
+
+
+btnSearch.addEventListener('click', filter)
 fullThePage();
 console.log(navMenu);
