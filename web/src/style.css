@@ -18,6 +18,12 @@ body {
   grid-area: m;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @media screen and (min-width: 1200px) {
   #container {
     display: grid;
@@ -93,4 +99,73 @@ body {
 
 #breadcrumbsUl li:last-child a {
   color: black;
+}
+
+.paginationSort {
+  display: flex;
+  justify-content: space-between;
+}
+.paginationSort .pagination {
+  display: flex;
+}
+.paginationSort .pagination div {
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  text-align: center;
+  margin-right: 16px;
+  vertical-align: middle;
+}
+
+.stock .stock-items {
+  margin-top: 16px;
+  display: grid;
+  grid-gap: 16px;
+}
+.stock .stock-item {
+  width: 850px;
+  height: 200px;
+  background-color: white;
+  display: flex;
+  padding: 16px;
+}
+.stock .stock-item .stock-content {
+  margin: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.stock .stock-item .firstLine {
+  width: 576px;
+  display: flex;
+  justify-content: space-between;
+}
+.stock .stock-item .firstLine .title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+.stock .stock-item .firstLine .price {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+}
+.stock .stock-item .thirdLine {
+  display: flex;
+  justify-content: left;
+}
+.stock .stock-item .thirdLine div {
+  height: 24px;
+  background-color: #BDBDBD;
+  margin-right: 16px;
+  padding: 5px 15px;
+  color: white;
+}
+.stock .stock-item img {
+  width: 224px;
+  height: 168px;
 }/*# sourceMappingURL=style.css.map */
